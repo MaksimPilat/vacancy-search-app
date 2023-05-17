@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import './App.css'
+import VacancySearch from './pages/VacancySearch/VacancySearch'
+import VacancyInfo from './pages/VacancyInfo/VacancyInfo'
+import Favorites from './pages/Favorites/Favorites'
+import NotFound from './pages/NotFound/NotFound'
+import Header from './components/Header/Header'
 
-function App() {
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='wrapper'>
+      <Header></Header>
+      <Routes>
+        <Route path='/' element={<VacancySearch />} />
+        <Route path='/Vacancies/:id' element={<VacancyInfo />} />
+        <Route path='/Favorites' element={<Favorites />} />
+        <Route path='/NotFound' element={<NotFound />} />
+      </Routes>
     </div>
-  );
+    
+  )
 }
-
-export default App;

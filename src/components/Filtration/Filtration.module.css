@@ -1,0 +1,61 @@
+.wrapper{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 12px;
+    width: 315px;
+}
+
+.wrapper > div, button{
+    margin-top: 20px;
+}
+
+.wrapper div:first-child{
+    margin-top: 0px;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title h1{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black-text-color);
+}
+
+.title div{
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--grey-text-color);
+    cursor: pointer;
+}
+
+h2{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+input, select{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+
+button{
+    width: 100%;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 10px;
+    color: #FFFFFF;
+    background-color: var(--blue-main-color);
+}
+
+h1, h2{
+    color: var(--black-text-color);
+}
+
+input, select, button{
+    border-radius: 8px;
+}
