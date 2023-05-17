@@ -12,3 +12,14 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
+:root {
+  --black-text-color: #232134;
+  --grey-text-color: #ACADB9;
+  --blue-main-color: #5E96FC;
+  --grey200-border-color: #EAEBED;
+  --grey300-border-color: #D5D6DC;
+}
+
+input::-moz-placeholder { color: var(--grey-text-color) }
+input::-webkit-input-placeholder { color: var(--grey-text-color) }

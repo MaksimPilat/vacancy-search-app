@@ -4,7 +4,7 @@ import styles from './Header.module.css'
 export default function Header(props) {
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.root}>
             <div className='container'>
                 <div className={styles.header}>
                     <a href='/'>
@@ -13,13 +13,13 @@ export default function Header(props) {
                     <nav>
                         <ul>
                             <li>
-                                <NavLink style={({ isActive }) => isActive ? { color: "#5E96FC" } : { color: "#232134" }}
+                                <NavLink style={({ isActive }) => isActive ? { color: "var(--blue-main-color)" } : { color: "var(--black-text-color)" }}
                                 to={"/"}>
                                     Поиск вакансий
                                 </NavLink>
                             </li>
                             <li>
-                            <NavLink style={({ isActive }) => isActive ? { color: "#5E96FC" } : { color: "#232134" }}
+                            <NavLink style={({ isActive }) => isActive ? { color: "var(--blue-main-color)" } : { color: "var(--black-text-color)" }}
                                 to={"/Favorites"}>
                                     Избранное
                                 </NavLink>

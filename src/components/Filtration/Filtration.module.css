@@ -1,11 +1,12 @@
 .wrapper{
-    background-color: rgb(255, 255, 255);
+    background-color: #FFFFFF;
+    width: 315px;
     padding: 20px;
     border-radius: 12px;
-    width: 315px;
+    border: 1px solid var(--grey200-border-color);
 }
 
-.wrapper > div, button{
+.wrapper > div, .wrapper > button{
     margin-top: 20px;
 }
 
@@ -29,21 +30,41 @@
     line-height: 20px;
     color: var(--grey-text-color);
     cursor: pointer;
+    position: relative;
+    padding-right: 15px;
 }
 
-h2{
+.title div::before, .title div::after{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 1.25px;
+    background: var(--grey-text-color);
+    top: 50%;
+    right: 0;
+}
+
+.title div::before{
+    transform: rotate(45deg);
+}
+
+.title div::after{
+    transform: rotate(-45deg);
+}
+
+.wrapper h2{
     font-size: 16px;
     font-weight: 700;
 }
 
-input, select{
+.wrapper input, select{
     width: 100%;
     margin-top: 10px;
     padding: 10px;
     display: inline-block;
 }
 
-button{
+.wrapper button{
     width: 100%;
     font-size: 14px;
     line-height: 21px;
@@ -52,10 +73,18 @@ button{
     background-color: var(--blue-main-color);
 }
 
-h1, h2{
+.wrapper h1, h2{
     color: var(--black-text-color);
 }
 
-input, select, button{
+.wrapper input, .wrapper select, .wrapper button{
     border-radius: 8px;
+}
+
+.wrapper input, select, button{
+    border-radius: 8px;
+}
+
+.wrapper input, .wrapper select{
+    border: 1px solid var(--grey300-border-color);
 }

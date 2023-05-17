@@ -1,5 +1,7 @@
 .wrapper{
     height: 100px;
-    background-color: rgb(212, 212, 212);
+    background-color: #ffffff;
+    border: 1px solid var(--grey200-border-color);
+    border-radius: 12px;
     margin-top: 20px;
 }

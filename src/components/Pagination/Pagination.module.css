@@ -1,0 +1,32 @@
+.root{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.root li{
+    display: inline-flex;
+    justify-content: center;
+    line-height: 32px;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    border: 1px solid var(--grey200-border-color);
+    background-color: #FFFFFF;
+    color: var(--black-text-color);
+    cursor: pointer;
+}
+
+.root li:hover{
+    background-color: var(--blue-main-color);
+    color: #FFFFFF;
+}
+
+.root :global .selected{
+   background-color: var(--blue-main-color);
+   color: #FFFFFF;
+}
+
+.root a{
+    display: inline-block;
+    width: 100%;
+}

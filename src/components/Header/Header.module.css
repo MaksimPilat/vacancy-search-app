@@ -1,4 +1,4 @@
-.wrapper{
+.root{
     background-color: #ffffff;
 }
 
@@ -7,21 +7,21 @@
     padding: 20px 0px;
 }
 
-img{
+.root img{
     object-fit: contain;
 }
 
-nav{
+.root nav{
     margin: 0 auto;
 }
 
-li{
+.root li{
     display: inline;
     margin-right: 60px;
     line-height: 36px;
 }
 
-a{
+.root a{
     text-decoration: none;
     display: contents;
 }

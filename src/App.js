@@ -1,10 +1,10 @@
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import VacancySearch from './pages/VacancySearch/VacancySearch'
-import VacancyInfo from './pages/VacancyInfo/VacancyInfo'
-import Favorites from './pages/Favorites/Favorites'
-import NotFound from './pages/NotFound/NotFound'
-import Header from './components/Header/Header'
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import VacancySearch from './pages/VacancySearch';
+import VacancyInfo from './pages/VacancyInfo';
+import Favorites from './pages/Favorites';
+import NotFound from './pages/NotFound';
+import Header from './components/Header';
 
 export default function App() {
 
