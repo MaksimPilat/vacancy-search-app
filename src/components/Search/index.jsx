@@ -8,6 +8,7 @@ export default function Search({ onSearch, defaultValue }) {
     return(
         <div className={styles.wrapper}>
             <input
+                data-elem="search-input"
                 ref={searchInput}
                 defaultValue={defaultValue}
                 type='search'
@@ -15,7 +16,11 @@ export default function Search({ onSearch, defaultValue }) {
                 id="vacancy-search"
                 name="vacancy-search">
             </input>
-            <button onClick={() => onSearch(searchInput.current.value)}>Поиск</button>
+            <button
+                data-elem="search-button"
+                onClick={() => onSearch(searchInput.current.value)}>
+                    Поиск
+            </button>
         </div>
     )
 }

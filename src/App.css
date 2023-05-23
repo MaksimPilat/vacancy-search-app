@@ -1,9 +1,18 @@
 .App {
   text-align: center;
-  
 }
 
 .wrapper{
+  opacity: 0;
+  transition: 1s;
+}
+
+.wrapperEnterDone{
+  opacity: 1;
+}
+
+.content{
+  margin-top: 110px;
 }
 
 .container{

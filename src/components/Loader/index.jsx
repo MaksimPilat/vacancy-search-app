@@ -1,7 +1,7 @@
 import styles from './Loader.module.css';
 
-export default function Loader() {
+export default function Loader({ active }) {
 
-    return <div className={styles.root}></div>
+    if (active) return <div className={styles.root}></div>
 
 }

@@ -4,18 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function getPayment(payment_from, payment_to, currency) {
+
+function getPayment(payment_from, payment_to, currency, isLink) {
     if (payment_from) {
-        if (payment_to) return(
+        let content = `з/п от ${payment_from} - ${payment_to} ${currency}`;
+        if (!payment_to) content = `з/п от ${payment_from} ${currency}`;
+        return (
             <>
-                <p>з/п от {payment_from} - {payment_to} {currency}</p>
-                <span>•</span>
-            </>
-        );
-        else return(
-            <>
-                <p>з/п от {payment_from} {currency}</p>
+                <p className={isLink ? styles.linkPayment : styles.simplePayment}>{content}</p>
                 <span>•</span>
             </>
         );
@@ -43,20 +41,40 @@ export default function Vacancy(props) {
         localStorage.setItem('favoriteVacancies', JSON.stringify(favoriteVacancies));
     }, [isFavorite]);
 
+    let link = <h1 className={styles.simpleTitle}>{props.profession}</h1>;
+    if (props.isLink) link =
+        <Link 
+            to={{ pathname: `/Vacancies/${props.id}`}}
+            state={{
+                id: props.id,
+                profession: props.profession,
+                town: props.town,
+                type_of_work: props.type_of_work,
+                payment_from: props.payment_from,
+                payment_to: props.payment_to,
+                currency: props.currency,
+                description: props.description
+            }}>
+            <h1 className={styles.linkTitle}>{props.profession}</h1>
+        </Link>
+
     return (
        <div className={styles.root}>
             <div className={styles.title}>
-                <h1>{props.profession}</h1>
-                <FontAwesomeIcon
-                    onClick={() => setIsFavorite(!isFavorite)}
-                    icon={(() => isFavorite ? fasStar : farStar)()}
-                    className={styles.starButton} />
+               {link}
+               <button data-elem={`vacancy-${props.id}-shortlist-button`} className={styles.starButton}>
+                    <FontAwesomeIcon
+                        onClick={() => setIsFavorite(!isFavorite)}
+                        icon={(() => isFavorite ? fasStar : farStar)()}
+                    />
+               </button>
+                
             </div>
-            <div className={styles.info}>
-                {getPayment(props.payment_from, props.payment_to, props.currency)}
+            <div className={`${props.isLink ? styles.linkInfo : styles.simpleInfo} ${styles.info}`}>
+                {getPayment(props.payment_from, props.payment_to, props.currency, props.isLink)}
                 <p>{props.type_of_work}</p>
             </div>
-            <div className={styles.location}>
+            <div className={`${props.isLink ? styles.linkLocation : styles.simpleLocation} ${styles.location}`}>
                 <img src={LocationIcon}></img>
                 <p>{props.town}</p>
             </div>

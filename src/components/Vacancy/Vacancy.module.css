@@ -12,10 +12,16 @@
     gap: 50px;
 }
 
-.title h1{
+.simpleTitle{
+    color: var(--black-text-color);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.linkTitle{
+    color: var(--blue500-main-color);
     font-size: 20px;
     font-weight: 600;
-    color: var(--blue500-main-color);
 }
 
 .title button{
@@ -24,15 +30,38 @@
     height: 20px;
 }
 
+.root a{
+    color: var(--blue500-main-color);
+    text-decoration: none;
+}
+
+.root a:hover{
+    color: var(--blue600-text-color);
+    text-decoration:underline    ;
+}
+
 .info{
     display: flex;
     font-size: 16px;
     flex-wrap: wrap;
     line-height: 1.5;
+}
+
+.simpleInfo{
+    font-size: 20px;
+    margin-top: 16px;
+}
+
+.linkInfo{
+    font-size: 16px;
     margin-top: 13px;
 }
 
-.info p:first-of-type{
+.simplePayment{
+    font-weight: 700;
+}
+
+.linkPayment{
     font-weight: 600;
 }
 
@@ -45,6 +74,13 @@
 .location{
     display: flex;
     gap: 10px;
+}
+
+.simpleLocation{
+    margin-top: 16px;
+}
+
+.linkLocation{
     margin-top: 13px;
 }
 
@@ -52,4 +88,6 @@
     color: var(--blue500-main-color);
     font-size: 20px;
     cursor: pointer;
+    padding: 0;
+    background: none !important;
 }

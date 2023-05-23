@@ -10,7 +10,7 @@ import { CSSTransition } from 'react-transition-group';
 import fetchVacancies from '../../api/fetchVacancies';
 
 
-export default function VacancySearch(props) {
+export default function VacancySearch() {
 
     const [searchParams, setSearchParams] = useSearchParams();
     const isMounted = useRef(false);
@@ -97,22 +97,22 @@ export default function VacancySearch(props) {
                         <div className={styles.vacancyList}>
                             {vacancies.map(item => 
                                 <Vacancy
+                                    data-elem={`vacancy-${item.id}`}
                                     key={item.id}
                                     id={item.id}
                                     profession ={item.profession}
-                                    firm_name={item.firm_name }
                                     town={item.town.title}
                                     type_of_work={item.type_of_work.title}
                                     payment_from={item.payment_from}
                                     payment_to={item.payment_to}
                                     currency={item.currency}
+                                    description={item.vacancyRichText}
+                                    isLink={true}
                                 />
                             )}
                         </div>
                     </CSSTransition>
-                    <CSSTransition in={!loader} timeout={0} classNames={{enterDone: styles.vacancyListEnterDone, exitDone: styles.vacancyListExitDone}}>
-                        <Loader />
-                    </CSSTransition>
+                    <Loader active={loader}/>
                     <Pagination
                         changePage={number => setCurrentPage(number + 1)}
                         forcePage={currentPage-1}

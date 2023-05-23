@@ -7,11 +7,10 @@
 .body{
     width: 100%;
     position: relative;
-    /* display: none; */
 }
 
 .filtration{
-    
+    min-width: 300px;
 }
 
 .vacancyList{
@@ -25,4 +24,17 @@
 
 .vacancyListExitDone{
     opacity: 1;
+}
+
+
+@media screen and (max-width: 767px){
+
+    .wrapper{
+        display: block;
+    }
+    
+    .filtration{
+        margin: 0 auto 20px auto;
+        width: 100%;
+    }
 }

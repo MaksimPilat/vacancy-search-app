@@ -1,4 +1,4 @@
-export default async function fetchFavorites(ids) {
+export default async function fetchCertainVacancies(ids) {
     let url = "https://startup-summer-2023-proxy.onrender.com/2.0/v3.r.137440105.ffdbab114f92b821eac4e21f485343924a773131.06c3bdbb8446aeb91c35b80c42ff69eb9c457948/vacancies/?";
     ids.forEach(id => {
         if (!id) return;

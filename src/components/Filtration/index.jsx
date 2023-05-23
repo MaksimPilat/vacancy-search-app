@@ -48,6 +48,7 @@ export default function Filtration({ onFilter, defaultValues}) {
             <div>
                 <h2>Отрасль</h2>
                 <select
+                    data-elem="industry-select"
                     value={selectedCatalogue}
                     onChange={event => chengeSelect(event)}
                     name="catalogues"
@@ -59,6 +60,7 @@ export default function Filtration({ onFilter, defaultValues}) {
             <div>
                 <h2>Оклад</h2>
                 <input
+                    data-elem="salary-from-input"
                     ref={filters.paymentFromInput}
                     defaultValue={defaultValues[1]}
                     type="number"
@@ -68,6 +70,7 @@ export default function Filtration({ onFilter, defaultValues}) {
                     placeholder="От">
                 </input>
                 <input
+                    data-elem="salary-to-input"
                     ref={filters.paymentToInput}
                     defaultValue={defaultValues[2]}
                     type="number"
@@ -77,13 +80,17 @@ export default function Filtration({ onFilter, defaultValues}) {
                     placeholder="До">
                 </input>
             </div>
-            <button onClick={() => {
-                onFilter(
-                    filters.catalogueSelect.current.value,
-                    filters.paymentFromInput.current.value,
-                    filters.paymentToInput.current.value
-                );
-            }}>Применить</button>
+            <button
+                data-elem="search-button"
+                onClick={() => {
+                    onFilter(
+                        filters.catalogueSelect.current.value,
+                        filters.paymentFromInput.current.value,
+                        filters.paymentToInput.current.value
+                    );
+                }}>
+                    Применить
+            </button>
        </div>
     )
 }

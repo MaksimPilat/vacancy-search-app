@@ -1,4 +1,5 @@
 import NotFoundIcon from './NotFoundIcon.png';
 import LocationIcon from './LocationIcon.png';
+import Logo from './Logo.png';
 
-export { NotFoundIcon, LocationIcon }
+export { Logo, NotFoundIcon, LocationIcon }
