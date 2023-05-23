@@ -1,7 +1,55 @@
-.wrapper{
-    height: 100px;
+.root{
     background-color: #ffffff;
     border: 1px solid var(--grey200-border-color);
     border-radius: 12px;
     margin-top: 20px;
+    padding: 25px;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.title h1{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--blue500-main-color);
+}
+
+.title button{
+    background-color: var(--blue500-main-color);
+    width: 20px;
+    height: 20px;
+}
+
+.info{
+    display: flex;
+    font-size: 16px;
+    flex-wrap: wrap;
+    line-height: 1.5;
+    margin-top: 13px;
+}
+
+.info p:first-of-type{
+    font-weight: 600;
+}
+
+.info span{
+    margin: 0 12px;
+    color: var(--grey500-text-color);
+    font-weight: 700;
+}
+
+.location{
+    display: flex;
+    gap: 10px;
+    margin-top: 13px;
+}
+
+.starButton{
+    color: var(--blue500-main-color);
+    font-size: 20px;
+    cursor: pointer;
 }

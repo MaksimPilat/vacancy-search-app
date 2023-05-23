@@ -1,16 +1,17 @@
-.wrapper{
+.root{
     background-color: #FFFFFF;
     width: 315px;
     padding: 20px;
     border-radius: 12px;
     border: 1px solid var(--grey200-border-color);
+    margin: 0 auto;
 }
 
-.wrapper > div, .wrapper > button{
+.root > div, .root > button{
     margin-top: 20px;
 }
 
-.wrapper div:first-child{
+.root div:first-child{
     margin-top: 0px;
 }
 
@@ -52,39 +53,39 @@
     transform: rotate(-45deg);
 }
 
-.wrapper h2{
+.root h2{
     font-size: 16px;
     font-weight: 700;
 }
 
-.wrapper input, select{
+.root input, select{
     width: 100%;
     margin-top: 10px;
     padding: 10px;
     display: inline-block;
 }
 
-.wrapper button{
+.root button{
     width: 100%;
     font-size: 14px;
     line-height: 21px;
     padding: 10px;
     color: #FFFFFF;
-    background-color: var(--blue-main-color);
+    background-color: var(--blue500-main-color);
 }
 
-.wrapper h1, h2{
+.root h1, h2{
     color: var(--black-text-color);
 }
 
-.wrapper input, .wrapper select, .wrapper button{
+.root input, .root select, .root button{
     border-radius: 8px;
 }
 
-.wrapper input, select, button{
+.root input, select, button{
     border-radius: 8px;
 }
 
-.wrapper input, .wrapper select{
+.root input, .root select{
     border: 1px solid var(--grey300-border-color);
 }

@@ -1,0 +1,19 @@
+.root{
+    margin: 40px 0;
+    width: 100%;
+    position: relative;
+}
+
+.vacancyList{
+    min-height: 45vh;
+}
+
+.vacancyListEnterDone{
+    opacity: 0;
+    height: 45vh;
+}
+
+.vacancyListExitDone{
+    opacity: 1;
+}
+

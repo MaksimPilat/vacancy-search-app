@@ -4,14 +4,25 @@
     gap: 30px;
 }
 
-.filtration{
-   
+.body{
+    width: 100%;
+    position: relative;
+    /* display: none; */
 }
 
-.body{
-    width: 100%
+.filtration{
+    
 }
 
 .vacancyList{
-    
+    min-height: 40vh;
+}
+
+.vacancyListEnterDone{
+    opacity: 0;
+    height: 40vh;
+}
+
+.vacancyListExitDone{
+    opacity: 1;
 }

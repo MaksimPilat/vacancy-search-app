@@ -13,13 +13,13 @@ export default function Header(props) {
                     <nav>
                         <ul>
                             <li>
-                                <NavLink style={({ isActive }) => isActive ? { color: "var(--blue-main-color)" } : { color: "var(--black-text-color)" }}
+                                <NavLink style={({ isActive }) => isActive ? { color: "var(--blue500-main-color)" } : { color: "var(--black-text-color)" }}
                                 to={"/"}>
                                     Поиск вакансий
                                 </NavLink>
                             </li>
                             <li>
-                            <NavLink style={({ isActive }) => isActive ? { color: "var(--blue-main-color)" } : { color: "var(--black-text-color)" }}
+                            <NavLink style={({ isActive }) => isActive ? { color: "var(--blue500-main-color)" } : { color: "var(--black-text-color)" }}
                                 to={"/Favorites"}>
                                     Избранное
                                 </NavLink>

@@ -1,6 +1,6 @@
 .root{
     text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .root li{
@@ -9,7 +9,7 @@
     line-height: 32px;
     width: 32px;
     height: 32px;
-    margin-right: 10px;
+    margin: 0 10px 10px 0;
     border: 1px solid var(--grey200-border-color);
     background-color: #FFFFFF;
     color: var(--black-text-color);
@@ -17,12 +17,12 @@
 }
 
 .root li:hover{
-    background-color: var(--blue-main-color);
+    background-color: var(--blue500-main-color);
     color: #FFFFFF;
 }
 
-.root :global .selected{
-   background-color: var(--blue-main-color);
+.activeLink{
+   background-color: var(--blue500-main-color);
    color: #FFFFFF;
 }
 

@@ -16,14 +16,13 @@
 }
 
 .root li{
-    display: inline;
+    display: inline-flex;
     margin-right: 60px;
     line-height: 36px;
 }
 
 .root a{
     text-decoration: none;
-    display: contents;
 }
 
 
