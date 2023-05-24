@@ -26,8 +26,7 @@
 
 .title button{
     background-color: var(--blue500-main-color);
-    width: 20px;
-    height: 20px;
+   
 }
 
 .root a{
@@ -89,5 +88,4 @@
     font-size: 20px;
     cursor: pointer;
     padding: 0;
-    background: none !important;
 }

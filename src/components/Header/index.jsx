@@ -8,8 +8,8 @@ export default function Header(props) {
     const [burgerMenu, setBurgerMenu] = useState(false);
 
     useEffect(() => {
-        if (burgerMenu) document.querySelector('body').classList.add(styles.scrollLock);
-        else document.querySelector('body').classList.remove(styles.scrollLock);
+        if (burgerMenu) document.querySelector('body').classList.add('scrollLock');
+        else document.querySelector('body').classList.remove('scrollLock');
     }, [burgerMenu]);
 
     return (

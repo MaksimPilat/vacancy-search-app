@@ -59,16 +59,14 @@ export default function Vacancy(props) {
         </Link>
 
     return (
-       <div className={styles.root}>
+       <div data-elem={`vacancy-${props.id}`} className={styles.root}>
             <div className={styles.title}>
                {link}
-               <button data-elem={`vacancy-${props.id}-shortlist-button`} className={styles.starButton}>
-                    <FontAwesomeIcon
-                        onClick={() => setIsFavorite(!isFavorite)}
-                        icon={(() => isFavorite ? fasStar : farStar)()}
-                    />
-               </button>
-                
+                <FontAwesomeIcon
+                    data-elem={`vacancy-${props.id}-shortlist-button`} className={styles.starButton}
+                    onClick={() => setIsFavorite(!isFavorite)}
+                    icon={(() => isFavorite ? fasStar : farStar)()}
+                />
             </div>
             <div className={`${props.isLink ? styles.linkInfo : styles.simpleInfo} ${styles.info}`}>
                 {getPayment(props.payment_from, props.payment_to, props.currency, props.isLink)}

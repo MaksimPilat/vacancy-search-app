@@ -113,8 +113,4 @@
     .burger{
         display: block;
     }
-
-    .scrollLock{
-        overflow: hidden;
-    }
 }

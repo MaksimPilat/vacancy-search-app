@@ -8,6 +8,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import fetchVacancies from '../../api/fetchVacancies';
+import changeOverlay from '../../helpers/changeOverlay';
 
 
 export default function VacancySearch() {
@@ -21,7 +22,14 @@ export default function VacancySearch() {
     const [pageCount, setPageCount] = useState(125);
     const [filter, setFilter] = useState(initFilter());
     const [keyword, setKeyword] = useState(initKeyWord());
-   
+    const [filterOverlay, setFilterOverlay] = useState(false);
+    const filterOverlayDOM = useRef();
+
+    useEffect(() => {
+        if (filterOverlay) document.querySelector('body').classList.add('scrollLock');
+        else document.querySelector('body').classList.remove('scrollLock');
+    }, [filterOverlay]);
+
     function initPage() {
         if (searchParams.has('page')) return Number(searchParams.get('page'));
         return 1;
@@ -79,25 +87,37 @@ export default function VacancySearch() {
     return(
         <div className='container'>
             <div className={styles.wrapper}>
-                <div className={styles.filtration}>
-                    <Filtration
-                        onFilter={(catalogues, payment_from, payment_to) =>
-                            setFilter({
-                                catalogues: catalogues,
-                                payment_from: payment_from,
-                                payment_to: payment_to
-                            })
-                        }
-                        defaultValues={[searchParams.get('catalogues'), searchParams.get('payment_from'), searchParams.get('payment_to')]}
-                    />
-                </div>
+
+                <CSSTransition unmountOnExit in={filterOverlay} timeout={0} classNames={{enterDone: styles.filterOverlayEnterDone, exitDone: styles.filterOverlayExitDone}}>
+                    <div
+                        onClick={event => changeOverlay(event, filterOverlayDOM.current, false, state => setFilterOverlay(state))}
+                        className={styles.filtrationWrapper}>
+                        <div ref={filterOverlayDOM} className={styles.filtration}>
+                            <Filtration
+                                onFilter={(catalogues, payment_from, payment_to) =>
+                                    setFilter({
+                                        catalogues: catalogues,
+                                        payment_from: payment_from,
+                                        payment_to: payment_to
+                                    })
+                                }
+                                defaultValues={[searchParams.get('catalogues'), searchParams.get('payment_from'), searchParams.get('payment_to')]}
+                            />
+                        </div>
+                    </div>
+                </CSSTransition>
+    
                 <div className={styles.body}>
-                    <Search onSearch={(keyword) => setKeyword(keyword)} defaultValue={keyword} />
+                    <Search onSearch={keyword => setKeyword(keyword)} defaultValue={keyword} />
+                    <div
+                        className={styles.filterBtn}
+                        onClick={event => changeOverlay(event, filterOverlayDOM.current, true, state => setFilterOverlay(state))}>
+                            Фильтры
+                    </div>
                     <CSSTransition in={loader} timeout={0} classNames={{enterDone: styles.vacancyListEnterDone, exitDone: styles.vacancyListExitDone}}>
                         <div className={styles.vacancyList}>
                             {vacancies.map(item => 
                                 <Vacancy
-                                    data-elem={`vacancy-${item.id}`}
                                     key={item.id}
                                     id={item.id}
                                     profession ={item.profession}

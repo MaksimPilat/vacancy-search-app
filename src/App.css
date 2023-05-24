@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .wrapper{
   opacity: 0;
   transition: 1s;
@@ -19,6 +15,10 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.scrollLock{
+  overflow: hidden;
 }
 
 :root {

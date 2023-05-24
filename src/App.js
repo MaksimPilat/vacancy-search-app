@@ -18,19 +18,21 @@ export default function App() {
   }, []);
 
   return (
-    <CSSTransition in={isLoaded} timeout={0} classNames={{enterDone: 'wrapperEnterDone'}}>
-      <div className='wrapper'>
-        <Header></Header>
-        <div className='content'>
-          <Routes>
-            <Route path='/' element={<VacancySearch />} />
-            <Route path='/Vacancies/:id' element={<VacancyInfo />} />
-            <Route path='/Favorites' element={<Favorites />} />
-            <Route path='/NotFound' element={<NotFound />} />
-          </Routes>
+    <div className="App">
+      <CSSTransition in={isLoaded} timeout={0} classNames={{enterDone: 'wrapperEnterDone'}}>
+        <div className='wrapper'>
+          <Header></Header>
+          <div className='content'>
+            <Routes>
+              <Route path='/' element={<VacancySearch />} />
+              <Route path='/Vacancies/:id' element={<VacancyInfo />} />
+              <Route path='/Favorites' element={<Favorites />} />
+              <Route path='/NotFound' element={<NotFound />} />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </CSSTransition>
+      </CSSTransition>
+    </div>
     
   )
 }
