@@ -28,6 +28,7 @@ export default function App() {
               <Route path='/Vacancies/:id' element={<VacancyInfo />} />
               <Route path='/Favorites' element={<Favorites />} />
               <Route path='/NotFound' element={<NotFound />} />
+              <Route path='*' element={<NotFound />} />
             </Routes>
           </div>
         </div>

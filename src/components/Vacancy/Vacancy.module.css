@@ -88,4 +88,9 @@
     font-size: 20px;
     cursor: pointer;
     padding: 0;
+    height: 0;
+}
+
+.starButton svg{
+    padding: 5px;
 }

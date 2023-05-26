@@ -13,6 +13,7 @@ export default function Search({ onSearch, defaultValue }) {
                 defaultValue={defaultValue}
                 type='search'
                 placeholder='     Введите название вакансии'
+                results="0"
                 id="vacancy-search"
                 name="vacancy-search">
             </input>

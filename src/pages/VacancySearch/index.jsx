@@ -84,29 +84,29 @@ export default function VacancySearch() {
         updateVacancies();
     }, [filter, keyword]);
 
+    useEffect(() => {
+        setFilterOverlay(false);
+    }, [filter]);
+
     return(
         <div className='container'>
             <div className={styles.wrapper}>
-
-                <CSSTransition unmountOnExit in={filterOverlay} timeout={0} classNames={{enterDone: styles.filterOverlayEnterDone, exitDone: styles.filterOverlayExitDone}}>
-                    <div
-                        onClick={event => changeOverlay(event, filterOverlayDOM.current, false, state => setFilterOverlay(state))}
-                        className={styles.filtrationWrapper}>
-                        <div ref={filterOverlayDOM} className={styles.filtration}>
-                            <Filtration
-                                onFilter={(catalogues, payment_from, payment_to) =>
-                                    setFilter({
-                                        catalogues: catalogues,
-                                        payment_from: payment_from,
-                                        payment_to: payment_to
-                                    })
-                                }
-                                defaultValues={[searchParams.get('catalogues'), searchParams.get('payment_from'), searchParams.get('payment_to')]}
-                            />
-                        </div>
+                <div
+                    className={`${filterOverlay ? styles.showFilterOverlay : null}  ${styles.filtrationWrapper}`}
+                    onClick={event => changeOverlay(event, filterOverlayDOM.current, false, state => setFilterOverlay(state))}>
+                    <div ref={filterOverlayDOM} className={styles.filtration}>
+                        <Filtration
+                            onFilter={(catalogues, payment_from, payment_to) =>
+                                setFilter({
+                                    catalogues: catalogues,
+                                    payment_from: payment_from,
+                                    payment_to: payment_to
+                                })
+                            }
+                            defaultValues={[searchParams.get('catalogues'), searchParams.get('payment_from'), searchParams.get('payment_to')]}
+                        />
                     </div>
-                </CSSTransition>
-    
+                </div>
                 <div className={styles.body}>
                     <Search onSearch={keyword => setKeyword(keyword)} defaultValue={keyword} />
                     <div

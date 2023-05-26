@@ -17,10 +17,6 @@
   padding: 0 20px;
 }
 
-.scrollLock{
-  overflow: hidden;
-}
-
 :root {
   --grey-bg-color: #f1f1f1;
   --black-text-color: #232134;
@@ -31,8 +27,19 @@
   --blue600-text-color: #3B7CD3;
   --grey200-border-color: #EAEBED;
   --grey300-border-color: #D5D6DC;
-  
 }
 
 input::-moz-placeholder { color: var(--grey-text-color) }
 input::-webkit-input-placeholder { color: var(--grey-text-color) }
+
+input[type=search], input[type=text]{
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+
+@media screen and (max-width: 767px){
+  .scrollLock{
+    overflow: hidden;
+  }
+}
