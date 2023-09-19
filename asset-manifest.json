@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/vacancy-search-app/static/css/main.0cfde288.css",
+    "main.js": "/vacancy-search-app/static/js/main.4c5c0ea3.js",
+    "static/media/NotFoundIcon.png": "/vacancy-search-app/static/media/NotFoundIcon.b96443a7eab080006e62.png",
+    "static/media/Logo.svg": "/vacancy-search-app/static/media/Logo.fc834db5ebaf00f2f9fad805ab33c29c.svg",
+    "index.html": "/vacancy-search-app/index.html",
+    "main.0cfde288.css.map": "/vacancy-search-app/static/css/main.0cfde288.css.map",
+    "main.4c5c0ea3.js.map": "/vacancy-search-app/static/js/main.4c5c0ea3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0cfde288.css",
+    "static/js/main.4c5c0ea3.js"
+  ]
+}
